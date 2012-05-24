@@ -6,35 +6,34 @@
 // Home at http://www.boost.org/libs/local_function
 
 #include <boost/config.hpp>
-#ifndef BOOST_NO_LAMBDAS
+#ifdef BOOST_NO_LAMBDAS
+#   error "lambda functions required"
+#else
 
 #include <iostream>
 #include <cassert>
 
-//[expensive_copy_lambda
+//[expensive_copy_cxx11_lambda
 struct n {
     int i;
     n(int _i): i(_i) {}
-    n(n const& x): i(x.i) { // Some time consuming copy.
+    n(n const& x): i(x.i) { // Some time consuming copy operation.
         for (unsigned i = 0; i < 10000; ++i) std::cout << '.';
     }
 };
+
 
 int main(void) {
     n x(-1);
 
     auto f = [x]() {        // Problem: Expensive copy, but if bind
-        assert( x.i == -1); // by `&x` then `x` is not constant.
+        assert(x.i == -1);  // by `&x` then `x` is not constant.
     };
     f();
 
     return 0;
 }
 //]
-
-#else // NO_LAMBDAS
-
-int main(void) { return 0; } // Trivial program.
 
 #endif // NO_LAMBDAS
 

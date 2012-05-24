@@ -6,7 +6,7 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.LocalFunction 1.0.0">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.LocalFunction 1.0.0">
-<link rel="prev" href="../BOOST_LOCAL_FUNCTION_CONFIG_BIND_MAX.html" title="Macro BOOST_LOCAL_FUNCTION_CONFIG_BIND_MAX">
+<link rel="prev" href="Examples.html" title="Examples">
 <link rel="next" href="No_Variadic_Macros.html" title="Annex: No Variadic Macros">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -20,7 +20,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../BOOST_LOCAL_FUNCTION_CONFIG_BIND_MAX.html"><img src="../../../../../doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../../../../../doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../../../../../doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="No_Variadic_Macros.html"><img src="../../../../../doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="Examples.html"><img src="../../../../../doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../../../../../doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../../../../../doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="No_Variadic_Macros.html"><img src="../../../../../doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section boost_localfunction_Alternatives">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
@@ -120,26 +120,26 @@
             </td>
 <td>
               <p>
-                Yes. Plus eventual compiler errors and debugging follow the usual
-                format of C++ statement errors.
+                Yes. Plus eventual compiler errors and debugging retain their usual
+                meaning and format.
               </p>
             </td>
 <td>
               <p>
-                Yes. Plus eventual compiler errors and debugging follow the usual
-                format of C++ statement errors.
+                Yes. Plus eventual compiler errors and debugging retain their usual
+                meaning and format.
               </p>
             </td>
 <td>
               <p>
-                Yes. Plus eventual compiler errors and debugging follow the usual
-                format of C++ statement errors.
+                Yes. Plus eventual compiler errors and debugging retain their usual
+                meaning and format.
               </p>
             </td>
 <td>
               <p>
-                Yes. Plus eventual compiler errors and debugging follow the usual
-                format of C++ statement errors.
+                Yes. Plus eventual compiler errors and debugging retain their usual
+                meaning and format.
               </p>
             </td>
 <td>
@@ -231,7 +231,7 @@
                 Yes. The variable names are repeated in the function declaration
                 so they can be bound by value, by constant value, by reference, and
                 by constant reference (the object <code class="computeroutput"><span class="keyword">this</span></code>
-                can also be bound).
+                can also be bound using <code class="computeroutput"><span class="identifier">this_</span></code>).
               </p>
             </td>
 <td>
@@ -241,7 +241,7 @@
                 at once) so they can be bound by constant value and by reference
                 (the object <code class="computeroutput"><span class="keyword">this</span></code> can
                 also be bound). However, variables cannot be bound by constant references
-                and non-constant value (see below).
+                (see below).
               </p>
             </td>
 <td>
@@ -268,7 +268,7 @@
 <td>
               <p>
                 <span class="emphasis"><em><a href="http://en.wikipedia.org/wiki/Type_polymorphism#Parametric_polymorphism" target="_top">Polymorphic</a>
-                in the unbound parameter types</em></span>
+                in the function parameter type</em></span>
               </p>
             </td>
 <td>
@@ -305,42 +305,52 @@
     </p>
 <p>
       <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-      lambda</a> functions have most of the features of this library (see also
-      the example in the <a class="link" href="../index.html#boost_localfunction.Introduction" title="Introduction">Introduction</a>
+      lambda functions</a> have most of the features of this library plus some
+      additional feature (see also the example in the <a class="link" href="../index.html#boost_localfunction.Introduction" title="Introduction">Introduction</a>
       section):
     </p>
 <div class="itemizedlist"><ul class="itemizedlist" type="disc">
 <li class="listitem">
           <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions can be defined within expressions while this library
+          lambda functions</a> can be defined within expressions while this library
           local functions can only be defined at declaration scope.
         </li>
 <li class="listitem">
           <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions are only supported by the <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
+          lambda functions</a> are only supported by the <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
           standard so they are not supported by all C++ compilers. This library local
           functions can be programmed also on <a href="http://www.open-std.org/JTC1/SC22/WG21/docs/standards" target="_top">C++03</a>
           compilers (and they have performances comparable to <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions on <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
+          lambda functions</a> on <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
           compilers).
         </li>
 <li class="listitem">
           <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions do not allow to bind variables in scope by constant
-          reference or by non-constant value. Because a variable cannot be bound
-          by constant reference, <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions can bind a variable by constant only if the variable
+          lambda functions</a> do not allow to bind variables in scope by constant
+          reference. Because a variable cannot be bound by constant reference, <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
+          lambda functions</a> can bind a variable by constant only if the variable
           is <code class="computeroutput"><span class="identifier">CopyConstructible</span></code> and
-          the binding requires a (potentially expensive) extra copy operation. Both
-          constant reference and non-constant value binding are instead supported
-          by this library. However, <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-          lambda</a> functions provide a short-hand syntax to bind all variables
+          the binding requires a (potentially expensive) extra copy operation. Constant
+          reference binding is instead supported by this library.
+        </li>
+<li class="listitem">
+          <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
+          lambda functions</a> do not allow to bind data members selectively
+          without binding also the object <code class="computeroutput"><span class="keyword">this</span></code>
+          while this library local functions can bind either selected data members
+          or the entire object <code class="computeroutput"><span class="keyword">this</span></code>
+          (using <code class="computeroutput"><span class="identifier">this_</span></code>).
+        </li>
+<li class="listitem">
+          <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
+          lambda functions</a> provide a short-hand syntax to bind all variables
           in scope at once (<code class="computeroutput"><span class="special">&amp;</span></code> or
-          <code class="computeroutput"><span class="special">=</span></code>).
+          <code class="computeroutput"><span class="special">=</span></code>) while this library local
+          function always require to bind variables naming them one-by-one.
         </li>
 </ul></div>
 <p>
-      For example, for non-copyable objects (see also <a href="../../../example/noncopyable_lambda_err.cpp" target="_top"><code class="literal">noncopyable_lambda_err.cpp</code></a>
+      For example, for non-copyable objects (see also <a href="../../../example/noncopyable_cxx11_lambda_error.cpp" target="_top"><code class="literal">noncopyable_cxx11_lambda_error.cpp</code></a>
       and <a href="../../../example/noncopyable_local_function.cpp" target="_top"><code class="literal">noncopyable_local_function.cpp</code></a>):
     </p>
 <div class="informaltable"><table class="table">
@@ -351,7 +361,7 @@
 <thead><tr>
 <th>
               <p>
-                C++11 Lambda
+                C++11 Lambda Function
               </p>
             </th>
 <th>
@@ -369,11 +379,12 @@
     <span class="identifier">n</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">_i</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">_i</span><span class="special">)</span> <span class="special">{}</span>
 <span class="special">};</span>
 
+
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="identifier">n</span> <span class="identifier">x</span><span class="special">(-</span><span class="number">1</span><span class="special">);</span>
 
-    <span class="keyword">auto</span> <span class="identifier">f</span> <span class="special">=</span> <span class="special">[</span><span class="identifier">x</span><span class="special">](</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>        <span class="comment">// Error: x is non-copyable, but if</span>
-        <span class="identifier">assert</span><span class="special">(</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span> <span class="special">);</span>    <span class="comment">// bind `&amp;x` then `x` is not constant.</span>
+    <span class="keyword">auto</span> <span class="identifier">f</span> <span class="special">=</span> <span class="special">[</span><span class="identifier">x</span><span class="special">](</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>    <span class="comment">// Error: x is non-copyable, but if</span>
+        <span class="identifier">assert</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span><span class="special">);</span>  <span class="comment">// bind `&amp;x` then `x` is not constant.</span>
     <span class="special">};</span>
     <span class="identifier">f</span><span class="special">();</span>
 
@@ -390,12 +401,13 @@
     <span class="keyword">int</span> <span class="identifier">i</span><span class="special">;</span>
     <span class="identifier">n</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">_i</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">_i</span><span class="special">)</span> <span class="special">{}</span>
 <span class="special">};</span>
+<span class="identifier">BOOST_TYPEOF_REGISTER_TYPE</span><span class="special">(</span><span class="identifier">n</span><span class="special">)</span> <span class="comment">// Register for `bind&amp; x` below.</span>
 
-<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span> <span class="special">{</span>
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="identifier">n</span> <span class="identifier">x</span><span class="special">(-</span><span class="number">1</span><span class="special">);</span>
 
     <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span>  <span class="comment">// OK: No copy</span>
-        <span class="identifier">assert</span><span class="special">(</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span> <span class="special">);</span>                    <span class="comment">// and constant.</span>
+        <span class="identifier">assert</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span><span class="special">);</span>                      <span class="comment">// and constant.</span>
     <span class="special">}</span> <span class="identifier">BOOST_LOCAL_FUNCTION_NAME</span><span class="special">(</span><span class="identifier">f</span><span class="special">)</span>
     <span class="identifier">f</span><span class="special">();</span>
 
@@ -408,7 +420,7 @@
 </tr></tbody>
 </table></div>
 <p>
-      Or, for objects with expensive copy operations (see also <a href="../../../example/expensive_copy_lambda.cpp" target="_top"><code class="literal">expensive_copy_lambda.cpp</code></a>
+      Or, for objects with expensive copy operations (see also <a href="../../../example/expensive_copy_cxx11_lambda.cpp" target="_top"><code class="literal">expensive_copy_cxx11_lambda.cpp</code></a>
       and <a href="../../../example/expensive_copy_local_function.cpp" target="_top"><code class="literal">expensive_copy_local_function.cpp</code></a>):
     </p>
 <div class="informaltable"><table class="table">
@@ -419,7 +431,7 @@
 <thead><tr>
 <th>
               <p>
-                C++11 Lambda
+                C++11 Lambda Function
               </p>
             </th>
 <th>
@@ -435,16 +447,17 @@
 <pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">struct</span> <span class="identifier">n</span> <span class="special">{</span>
     <span class="keyword">int</span> <span class="identifier">i</span><span class="special">;</span>
     <span class="identifier">n</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">_i</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">_i</span><span class="special">)</span> <span class="special">{}</span>
-    <span class="identifier">n</span><span class="special">(</span><span class="identifier">n</span> <span class="keyword">const</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Some time consuming copy.</span>
+    <span class="identifier">n</span><span class="special">(</span><span class="identifier">n</span> <span class="keyword">const</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Some time consuming copy operation.</span>
         <span class="keyword">for</span> <span class="special">(</span><span class="keyword">unsigned</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span> <span class="identifier">i</span> <span class="special">&lt;</span> <span class="number">10000</span><span class="special">;</span> <span class="special">++</span><span class="identifier">i</span><span class="special">)</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="char">'.'</span><span class="special">;</span>
     <span class="special">}</span>
 <span class="special">};</span>
+
 
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="identifier">n</span> <span class="identifier">x</span><span class="special">(-</span><span class="number">1</span><span class="special">);</span>
 
     <span class="keyword">auto</span> <span class="identifier">f</span> <span class="special">=</span> <span class="special">[</span><span class="identifier">x</span><span class="special">]()</span> <span class="special">{</span>        <span class="comment">// Problem: Expensive copy, but if bind</span>
-        <span class="identifier">assert</span><span class="special">(</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span><span class="special">);</span> <span class="comment">// by `&amp;x` then `x` is not constant.</span>
+        <span class="identifier">assert</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span><span class="special">);</span>  <span class="comment">// by `&amp;x` then `x` is not constant.</span>
     <span class="special">};</span>
     <span class="identifier">f</span><span class="special">();</span>
 
@@ -460,16 +473,17 @@
 <pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">struct</span> <span class="identifier">n</span> <span class="special">{</span>
     <span class="keyword">int</span> <span class="identifier">i</span><span class="special">;</span>
     <span class="identifier">n</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">_i</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">_i</span><span class="special">)</span> <span class="special">{}</span>
-    <span class="identifier">n</span><span class="special">(</span><span class="identifier">n</span> <span class="keyword">const</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Some time consuming copy.</span>
+    <span class="identifier">n</span><span class="special">(</span><span class="identifier">n</span> <span class="keyword">const</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">):</span> <span class="identifier">i</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Some time consuming copy operation.</span>
         <span class="keyword">for</span> <span class="special">(</span><span class="keyword">unsigned</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span> <span class="identifier">i</span> <span class="special">&lt;</span> <span class="number">10000</span><span class="special">;</span> <span class="special">++</span><span class="identifier">i</span><span class="special">)</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="char">'.'</span><span class="special">;</span>
     <span class="special">}</span>
 <span class="special">};</span>
+<span class="identifier">BOOST_TYPEOF_REGISTER_TYPE</span><span class="special">(</span><span class="identifier">n</span><span class="special">)</span> <span class="comment">// Register for `bind&amp; x` below.</span>
 
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="identifier">n</span> <span class="identifier">x</span><span class="special">(-</span><span class="number">1</span><span class="special">);</span>
 
-    <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span>  <span class="comment">// OK: No copy</span>
-        <span class="identifier">assert</span><span class="special">(</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span> <span class="special">);</span>                    <span class="comment">// and constant.</span>
+    <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span>  <span class="comment">// OK: No copy expensive</span>
+        <span class="identifier">assert</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">i</span> <span class="special">==</span> <span class="special">-</span><span class="number">1</span><span class="special">);</span>                      <span class="comment">// copy but constant.</span>
     <span class="special">}</span> <span class="identifier">BOOST_LOCAL_FUNCTION_NAME</span><span class="special">(</span><span class="identifier">f</span><span class="special">)</span>
     <span class="identifier">f</span><span class="special">();</span>
 
@@ -483,14 +497,11 @@
 </table></div>
 <p>
       When constant binding functionality is needed for <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
-      lambda</a> functions, the best alternative might be to bind an extra local
+      lambda functions</a>, the best alternative might be to bind an extra local
       variable declared constant and initialized to the original variable (for example,
-      <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">n</span><span class="special">&amp;</span> <span class="identifier">const_x</span> <span class="special">=</span> <span class="identifier">x</span></code> and then
-      bind <code class="computeroutput"><span class="identifier">const_x</span></code> instead of <code class="computeroutput"><span class="identifier">x</span></code> to the lambda function). In many cases
-      the use of the extra constant variable <code class="computeroutput"><span class="identifier">const_x</span></code>
-      can be acceptable but in other cases (e.g., <span class="emphasis"><em>constant blocks</em></span>
-      presented in the <a class="link" href="Examples.html" title="Examples">Examples</a>
-      section) it might be preferable to maintain the same variable name <code class="computeroutput"><span class="identifier">x</span></code> within the function body.
+      see <span class="emphasis"><em>constant blocks</em></span> implemented with <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
+      lambda functions</a> in the <a class="link" href="Examples.html" title="Examples">Examples</a>
+      section).
     </p>
 <p>
       <span class="bold"><strong>Local Functor</strong></span>
@@ -521,7 +532,7 @@
 <td>
               <p>
 </p>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="special">{</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="keyword">int</span> <span class="identifier">sum</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">factor</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>
 
     <span class="keyword">struct</span> <span class="identifier">local_add</span> <span class="special">{</span> <span class="comment">// Unfortunately, boilerplate code to program the class.</span>
@@ -530,6 +541,7 @@
         <span class="keyword">inline</span> <span class="keyword">void</span> <span class="keyword">operator</span><span class="special">()(</span><span class="keyword">int</span> <span class="identifier">num</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Body uses C++ statement syntax.</span>
             <span class="identifier">sum</span> <span class="special">+=</span> <span class="identifier">factor</span> <span class="special">*</span> <span class="identifier">num</span><span class="special">;</span>
         <span class="special">}</span>
+
     <span class="keyword">private</span><span class="special">:</span> <span class="comment">// Unfortunately, cannot bind so repeat variable types.</span>
         <span class="keyword">int</span><span class="special">&amp;</span> <span class="identifier">sum</span><span class="special">;</span> <span class="comment">// Access `sum` by reference.</span>
         <span class="keyword">const</span> <span class="keyword">int</span> <span class="identifier">factor</span><span class="special">;</span> <span class="comment">// Make `factor` constant.</span>
@@ -540,7 +552,8 @@
     <span class="comment">// Unfortunately, cannot pass as template parameter to `std::for_each`.</span>
     <span class="keyword">for</span><span class="special">(</span><span class="identifier">size_t</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span> <span class="identifier">i</span> <span class="special">&lt;</span> <span class="number">2</span><span class="special">;</span> <span class="special">++</span><span class="identifier">i</span><span class="special">)</span> <span class="identifier">add</span><span class="special">(</span><span class="identifier">nums</span><span class="special">[</span><span class="identifier">i</span><span class="special">]);</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -549,7 +562,7 @@
 <td>
               <p>
 </p>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="special">{</span>                                           <span class="comment">// Some local scope.</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>                            <span class="comment">// Some local scope.</span>
     <span class="keyword">int</span> <span class="identifier">sum</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">factor</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>               <span class="comment">// Variables in scope to bind.</span>
 
     <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span> <span class="identifier">factor</span><span class="special">,</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">sum</span><span class="special">,</span> <span class="keyword">int</span> <span class="identifier">num</span><span class="special">)</span> <span class="special">{</span>
@@ -560,7 +573,8 @@
     <span class="keyword">int</span> <span class="identifier">nums</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">};</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">nums</span><span class="special">,</span> <span class="identifier">nums</span> <span class="special">+</span> <span class="number">2</span><span class="special">,</span> <span class="identifier">add</span><span class="special">);</span>     <span class="comment">// Pass it to an algorithm.</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>               <span class="comment">// Assert final summation value.</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>                  <span class="comment">// Assert final summation value.</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -604,12 +618,13 @@
     <span class="keyword">inline</span> <span class="keyword">void</span> <span class="keyword">operator</span><span class="special">()(</span><span class="keyword">int</span> <span class="identifier">num</span><span class="special">)</span> <span class="special">{</span> <span class="comment">// Body uses C++ statement syntax.</span>
         <span class="identifier">sum</span> <span class="special">+=</span> <span class="identifier">factor</span> <span class="special">*</span> <span class="identifier">num</span><span class="special">;</span>
     <span class="special">}</span>
+
 <span class="keyword">private</span><span class="special">:</span> <span class="comment">// Unfortunately, cannot bind so repeat variable types.</span>
     <span class="keyword">int</span><span class="special">&amp;</span> <span class="identifier">sum</span><span class="special">;</span> <span class="comment">// Access `sum` by reference.</span>
     <span class="keyword">const</span> <span class="keyword">int</span> <span class="identifier">factor</span><span class="special">;</span> <span class="comment">// Make `factor` constant.</span>
 <span class="special">};</span>
 
-<span class="identifier">BOOST_AUTO_TEST_CASE</span><span class="special">(</span> <span class="identifier">test_add_global_functor</span> <span class="special">)</span> <span class="special">{</span>
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="keyword">int</span> <span class="identifier">sum</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">factor</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>
 
     <span class="identifier">global_add</span> <span class="identifier">add</span><span class="special">(</span><span class="identifier">sum</span><span class="special">,</span> <span class="identifier">factor</span><span class="special">);</span>
@@ -618,7 +633,8 @@
     <span class="keyword">int</span> <span class="identifier">nums</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">};</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">nums</span><span class="special">,</span> <span class="identifier">nums</span> <span class="special">+</span> <span class="number">2</span><span class="special">,</span> <span class="identifier">add</span><span class="special">);</span> <span class="comment">// Passed as template parameter.</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -627,7 +643,7 @@
 <td>
               <p>
 </p>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="special">{</span>                                           <span class="comment">// Some local scope.</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>                            <span class="comment">// Some local scope.</span>
     <span class="keyword">int</span> <span class="identifier">sum</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">factor</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>               <span class="comment">// Variables in scope to bind.</span>
 
     <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span> <span class="identifier">factor</span><span class="special">,</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">sum</span><span class="special">,</span> <span class="keyword">int</span> <span class="identifier">num</span><span class="special">)</span> <span class="special">{</span>
@@ -638,7 +654,8 @@
     <span class="keyword">int</span> <span class="identifier">nums</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">};</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">nums</span><span class="special">,</span> <span class="identifier">nums</span> <span class="special">+</span> <span class="number">2</span><span class="special">,</span> <span class="identifier">add</span><span class="special">);</span>     <span class="comment">// Pass it to an algorithm.</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>               <span class="comment">// Assert final summation value.</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>                  <span class="comment">// Assert final summation value.</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -679,7 +696,7 @@
 <td>
               <p>
 </p>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="special">{</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>
     <span class="keyword">using</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">phoenix</span><span class="special">::</span><span class="identifier">let</span><span class="special">;</span>
     <span class="keyword">using</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">phoenix</span><span class="special">::</span><span class="identifier">local_names</span><span class="special">::</span><span class="identifier">_f</span><span class="special">;</span>
     <span class="keyword">using</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">phoenix</span><span class="special">::</span><span class="identifier">cref</span><span class="special">;</span>
@@ -692,10 +709,11 @@
     <span class="comment">// Passed to template, `factor` by constant, and defined in expression.</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">nums</span><span class="special">,</span> <span class="identifier">nums</span> <span class="special">+</span> <span class="number">3</span><span class="special">,</span> <span class="identifier">let</span><span class="special">(</span><span class="identifier">_f</span> <span class="special">=</span> <span class="identifier">cref</span><span class="special">(</span><span class="identifier">factor</span><span class="special">))[</span>
         <span class="comment">// Unfortunately, body cannot use C++ statement syntax.</span>
-        <span class="identifier">ref</span><span class="special">(</span><span class="identifier">sum</span><span class="special">)</span> <span class="special">+=</span> <span class="identifier">_f</span> <span class="special">*</span> <span class="identifier">_1</span> <span class="comment">// Access `sum` by reference.</span>
+        <span class="identifier">ref</span><span class="special">(</span><span class="identifier">sum</span><span class="special">)</span> <span class="special">+=</span> <span class="identifier">_f</span> <span class="special">*</span> <span class="identifier">_1</span><span class="special">,</span> <span class="identifier">_1</span> <span class="comment">// Access `sum` by reference.</span>
     <span class="special">]);</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -704,7 +722,7 @@
 <td>
               <p>
 </p>
-<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="special">{</span>                                           <span class="comment">// Some local scope.</span>
+<pre xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="table-programlisting"><span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span> <span class="special">{</span>                            <span class="comment">// Some local scope.</span>
     <span class="keyword">int</span> <span class="identifier">sum</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">factor</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>               <span class="comment">// Variables in scope to bind.</span>
 
     <span class="keyword">void</span> <span class="identifier">BOOST_LOCAL_FUNCTION</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">bind</span> <span class="identifier">factor</span><span class="special">,</span> <span class="identifier">bind</span><span class="special">&amp;</span> <span class="identifier">sum</span><span class="special">,</span> <span class="keyword">int</span> <span class="identifier">num</span><span class="special">)</span> <span class="special">{</span>
@@ -715,7 +733,8 @@
     <span class="keyword">int</span> <span class="identifier">nums</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">};</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">nums</span><span class="special">,</span> <span class="identifier">nums</span> <span class="special">+</span> <span class="number">2</span><span class="special">,</span> <span class="identifier">add</span><span class="special">);</span>     <span class="comment">// Pass it to an algorithm.</span>
 
-    <span class="identifier">BOOST_CHECK</span><span class="special">(</span> <span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span> <span class="special">);</span>               <span class="comment">// Assert final summation value.</span>
+    <span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">sum</span> <span class="special">==</span> <span class="number">60</span><span class="special">);</span>                  <span class="comment">// Assert final summation value.</span>
+    <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -735,7 +754,7 @@
     </h6>
 <p>
       The following tables compare run-times, compile-times, and binary sizes for
-      the different alternatives presented here for local functions.
+      the different alternatives to local functions presented in this section.
     </p>
 <p>
       Overall, this library has compile-times and generates binary sizes similar
@@ -745,14 +764,16 @@
       <span class="special">...</span></code>). However, on compilers that allow
       to pass local types as template parameters (e.g., MSVC 8.0 or GCC 4.5.3 with
       <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a> features
-      enabled <code class="literal">-std=c++0x</code>, see also <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>)
+      enabled <code class="literal">-std=c++0x</code>, see also <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>
+      and <a href="http://www.boost.org/libs/chrono" target="_top">Boost.Config</a>'s <code class="computeroutput"><span class="identifier">BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS</span></code>)
       this library automatically generates optimized code that runs as fast as the
       fastest of the other approaches (see the "Boost.LocalFunction" approach
       below). When this library local function is specified <code class="computeroutput"><span class="keyword">inline</span></code>
       (see the "Boost.LocalFunction Inline" approach below and the <a class="link" href="Advanced_Topics.html" title="Advanced Topics">Advanced Topics</a> section)
       its run-times are always comparable to both the "Local Functor" and
       "Global Functor" approaches. However, in these cases the local function
-      cannot be portably passed as template parameter (see <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>)
+      cannot be portably passed as template parameter (see <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>
+      and <a href="http://www.boost.org/libs/chrono" target="_top">Boost.Config</a>'s <code class="computeroutput"><span class="identifier">BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS</span></code>)
       so <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span></code> is replaced by a for-loop (on MSVC
       the for-loop, and not the local function in fact the same applies to local
       functors, was measured to have worst performances than using <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">for_each</span></code>).
@@ -769,8 +790,8 @@
         The run-time performances of this library local functions are explained because
         on <a href="http://www.open-std.org/JTC1/SC22/WG21/docs/standards" target="_top">C++03</a>
         compliant compilers (e.g., GCC 4.5.3 without <code class="literal">-std=c++0x</code>)
-        this library needs to use a function pointer in order to pass the local function
-        class as a template parameter (see <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>
+        this library needs to use a function pointer in order to portably pass the
+        local function class as a template parameter (see <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm" target="_top">[N2657]</a>
         and the <a class="link" href="Implementation.html" title="Annex: Implementation">Implementation</a>
         section). For all tested compilers, this function pointer prevents the compiler
         optimization algorithms from inlining the local function calls. Instead,
@@ -779,9 +800,11 @@
         calls for optimization. This run-time performance cost is not present on
         compilers that allow to pass local types as template parameters (e.g., MSVC
         8.0 or GCC 4.5.3 with <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
-        features enabled <code class="literal">-std=c++0x</code>) because this library does
-        not have to use the extra function pointer to implement the local function
-        call (it directly passes the local class type as template parameter).
+        features enabled <code class="literal">-std=c++0x</code>, see <a href="http://www.boost.org/libs/chrono" target="_top">Boost.Config</a>'s
+        <code class="computeroutput"><span class="identifier">BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS</span></code>)
+        because this library does not have to use the extra function pointer to implement
+        the local function call (it directly passes the local class type as template
+        parameter).
       </p></td></tr>
 </table></div>
 <p>
@@ -800,8 +823,10 @@
       will perform with respect to each other when a more complex set of instructions
       is programmed for the local function body (e.g., <span class="emphasis"><em>if</em></span> a
       more complex set of instructions in the local function body were to inhibit
-      some compilers from inlining functor objects also other approaches like <a href="http://www.boost.org/libs/phoenix" target="_top">Boost.Phoenix</a> <span class="emphasis"><em>could</em></span>
-      start to show higher run-times even when optimization is enabled).
+      some compiler from inlining function objects also other approaches like <a href="http://en.wikipedia.org/wiki/C%2B%2B0x#Lambda_functions_and_expressions" target="_top">C++11
+      lambda functions</a> and <a href="http://www.boost.org/libs/phoenix" target="_top">Boost.Phoenix</a>
+      <span class="emphasis"><em>could</em></span> start to show higher run-times even when optimization
+      is enabled).
     </p>
 <p>
       The following commands were executed from the library example directory to
@@ -880,7 +905,7 @@
 <tr>
 <td>
               <p>
-                <span class="inlinemediaobject"><img src="../../../example/profile_legend_lambda.png" alt="profile_legend_lambda"></span>
+                <span class="inlinemediaobject"><img src="../../../example/profile_legend_cxx11_lambda.png" alt="profile_legend_cxx11_lambda"></span>
               </p>
             </td>
 <td>
@@ -891,7 +916,7 @@
             </td>
 <td>
               <p>
-                <a href="../../../example/profile_lambda.cpp" target="_top"><code class="literal">profile_lambda.cpp</code></a>
+                <a href="../../../example/profile_cxx11_lambda.cpp" target="_top"><code class="literal">profile_cxx11_lambda.cpp</code></a>
               </p>
             </td>
 </tr>
@@ -956,8 +981,8 @@
 <colgroup><col></colgroup>
 <thead><tr><th>
               <p>
-                GCC 4.5.3 With C++11 Lambdas and "Local Types as Template Parameters"
-                (<code class="literal">bjam cxxflags=-std=c++0x ...</code>)
+                GCC 4.5.3 With C++11 Lambda Functions and "Local Classes as
+                Template Parameters" (<code class="literal">bjam cxxflags=-std=c++0x ...</code>)
               </p>
             </th></tr></thead>
 <tbody>
@@ -965,14 +990,14 @@
               <p>
                 <span class="bold"><strong>Compiled with <code class="literal">bjam release ...</code>
                 for maximum optimization (<code class="literal">-O3 -finline-functions</code>)</strong></span>
-                <span class="inlinemediaobject"><img src="../../../example/profile_gcc_cpp11_release.png" width="1170" alt="profile_gcc_cpp11_release"></span>
+                <span class="inlinemediaobject"><img src="../../../example/profile_gcc_cxx11_release.png" width="1170" alt="profile_gcc_cxx11_release"></span>
               </p>
             </td></tr>
 <tr><td>
               <p>
                 <span class="bold"><strong>Compiled with <code class="literal">bjam debug ...</code>
                 for no optimization (<code class="literal">-O0 -fno-inline</code>)</strong></span>
-                <span class="inlinemediaobject"><img src="../../../example/profile_gcc_cpp11_debug.png" width="1170" alt="profile_gcc_cpp11_debug"></span>
+                <span class="inlinemediaobject"><img src="../../../example/profile_gcc_cxx11_debug.png" width="1170" alt="profile_gcc_cxx11_debug"></span>
               </p>
             </td></tr>
 </tbody>
@@ -981,9 +1006,8 @@
 <colgroup><col></colgroup>
 <thead><tr><th>
               <p>
-                MSVC 8.0 With "Local Types as Template Parameters" (Without
-                <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
-                Lambdas)
+                MSVC 8.0 With "Local Classes as Template Parameters" (Without
+                C++11 Lambda Functions)
               </p>
             </th></tr></thead>
 <tbody>
@@ -1008,7 +1032,7 @@
               <p>
                 GCC 4.3.4 With <a href="http://www.open-std.org/JTC1/SC22/WG21/docs/standards" target="_top">C++03</a>
                 Only (Without <a href="http://www.open-std.org/JTC1/SC22/WG21/" target="_top">C++11</a>
-                Lambdas and Without "Local Types as Template Parameters")
+                Lambda Functions and Without "Local Classes as Template Parameters")
               </p>
             </th></tr></thead>
 <tbody>
@@ -1040,7 +1064,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="../BOOST_LOCAL_FUNCTION_CONFIG_BIND_MAX.html"><img src="../../../../../doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../../../../../doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../../../../../doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="No_Variadic_Macros.html"><img src="../../../../../doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="Examples.html"><img src="../../../../../doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="../../../../../doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../../../../../doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="No_Variadic_Macros.html"><img src="../../../../../doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

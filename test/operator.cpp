@@ -5,24 +5,34 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 // Home at http://www.boost.org/libs/local_function
 
+#include <boost/config.hpp>
+#ifdef BOOST_NO_VARIADIC_MACROS
+#   error "variadic macros required"
+#else
+
 #include <boost/local_function.hpp>
-#define BOOST_TEST_MODULE TestOperator
-#include <boost/test/unit_test.hpp>
+#include <boost/typeof/typeof.hpp>
+#include BOOST_TYPEOF_INCREMENT_REGISTRATION_GROUP()
+#include <boost/detail/lightweight_test.hpp>
 
 //[operator
 struct point {
     int x;
     int y;
 };
+BOOST_TYPEOF_REGISTER_TYPE(point) // Register for `NAME` below.
 
-BOOST_AUTO_TEST_CASE( test_operator ) {
+int main(void) {
     bool BOOST_LOCAL_FUNCTION(const point& p, const point& q) {
         return p.x == q.x && p.y == q.y;
-    } BOOST_LOCAL_FUNCTION_NAME(equal) // OK: not using `operator...`.
+    } BOOST_LOCAL_FUNCTION_NAME(equal) // OK: not using `operator==`.
 
     point a; a.x = 1; a.y = 2;
     point b = a;
-    BOOST_CHECK( equal(a, b) );
+    BOOST_TEST(equal(a, b));
+    return boost::report_errors();
 }
 //]
+
+#endif // VARIADIC_MACROS
 

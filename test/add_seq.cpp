@@ -6,24 +6,23 @@
 // Home at http://www.boost.org/libs/local_function
 
 #include <boost/local_function.hpp>
-#define BOOST_TEST_MODULE TestAddSeq
-#include <boost/test/unit_test.hpp>
+#include <boost/detail/lightweight_test.hpp>
 #include <algorithm>
 
-BOOST_AUTO_TEST_CASE( test_add_seq )
 //[add_seq
-{                                           // Some local scope.
-    int sum = 0, factor = 10;               // Variables in scope to bind.
+int main(void) {
+    int sum = 0, factor = 10;
     
     void BOOST_LOCAL_FUNCTION( (const bind factor) (bind& sum) (int num) ) {
-        sum += factor * num;                // Parameters as sequence.
+        sum += factor * num;
     } BOOST_LOCAL_FUNCTION_NAME(add)
     
-    add(1);                                 // Call the local function.
+    add(1);
     int nums[] = {2, 3};
-    std::for_each(nums, nums + 2, add);     // Pass it to an algorithm.
+    std::for_each(nums, nums + 2, add);
 
-    BOOST_CHECK( sum == 60 );               // Assert final summation value.
+    BOOST_TEST(sum == 60);
+    return boost::report_errors();
 }
 //]
 

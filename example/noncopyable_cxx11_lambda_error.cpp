@@ -6,22 +6,25 @@
 // Home at http://www.boost.org/libs/local_function
 
 #include <boost/config.hpp>
-#ifndef BOOST_NO_LAMBDAS
+#ifdef BOOST_NO_LAMBDAS
+#   error "lambda functions required"
+#else
 
 #include <boost/noncopyable.hpp>
 #include <cassert>
 
-//[noncopyable_lambda_err
+//[noncopyable_cxx11_lambda_error
 struct n: boost::noncopyable {
     int i;
     n(int _i): i(_i) {}
 };
 
+
 int main(void) {
     n x(-1);
 
-    auto f = [x](void) {        // Error: x is non-copyable, but if
-        assert( x.i == -1 );    // bind `&x` then `x` is not constant.
+    auto f = [x](void) {    // Error: x is non-copyable, but if
+        assert(x.i == -1);  // bind `&x` then `x` is not constant.
     };
     f();
 
@@ -29,9 +32,5 @@ int main(void) {
 }
 //]
 
-#else // NO_LAMBDAS
-
-#error "Trivial failure."
-
-#endif // NO_LAMBDAS
+#endif // LAMBDAS
 

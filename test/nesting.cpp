@@ -5,11 +5,15 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 // Home at http://www.boost.org/libs/local_function
 
-#include <boost/local_function.hpp>
-#define BOOST_TEST_MODULE TestNesting
-#include <boost/test/unit_test.hpp>
+#include <boost/config.hpp>
+#ifdef BOOST_NO_VARIADIC_MACROS
+#   error "variadic macros required"
+#else
 
-BOOST_AUTO_TEST_CASE( test_nesting ) {
+#include <boost/local_function.hpp>
+#include <boost/detail/lightweight_test.hpp>
+
+int main(void) {
     //[nesting
     int x = 0;
 
@@ -24,6 +28,10 @@ BOOST_AUTO_TEST_CASE( test_nesting ) {
     
     f();
     //]
-    BOOST_CHECK( x == 0 );
+
+    BOOST_TEST(x == 0);
+    return boost::report_errors();
 }
+
+#endif // VARIADIC_MACROS
 

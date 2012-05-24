@@ -5,18 +5,24 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 // Home at http://www.boost.org/libs/local_function
 
-#include <boost/local_function.hpp>
-#define BOOST_TEST_MODULE TestAddParams
-#include <boost/test/unit_test.hpp>
+#include <boost/config.hpp>
+#ifdef BOOST_NO_VARIADIC_MACROS
+#   error "variadic macros required"
+#else
 
-BOOST_AUTO_TEST_CASE( test_add_params ) {
-    //[add_params
+#include <boost/local_function.hpp>
+#include <boost/detail/lightweight_test.hpp>
+
+int main(void) {
+    //[add_params_only
     int BOOST_LOCAL_FUNCTION(int x, int y) { // Local function.
         return x + y;
     } BOOST_LOCAL_FUNCTION_NAME(add)
     
-    BOOST_CHECK( add(1, 2) == 3 ); // Local function call.
+    BOOST_TEST(add(1, 2) == 3); // Local function call.
     //]
+    return boost::report_errors();
 }
-//]
+
+#endif // VARIADIC_MACROS
 

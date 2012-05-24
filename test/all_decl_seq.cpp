@@ -6,8 +6,13 @@
 // Home at http://www.boost.org/libs/local_function
 
 #include <boost/local_function.hpp>
+#include <boost/typeof/typeof.hpp>
+#include BOOST_TYPEOF_INCREMENT_REGISTRATION_GROUP()
 
-//[seq
+struct s;
+BOOST_TYPEOF_REGISTER_TYPE(s); // Register before bind `this_` below.
+
+// Compile all local function declaration combinations.
 struct s {
     void f(double p = 1.23, double q = -1.23) {
         { // Only params.
@@ -157,8 +162,7 @@ struct s {
         }
     }
 };
-//]
-    
+
 int main(void) {
     s().f();
     return 0;
