@@ -8,7 +8,12 @@
 import testing ;
 
 # Sun does not automatically detect type-of emulation mode (force it).
-project : requirements <toolset>sun:<define>BOOST_TYPEOF_EMULATION ;
+project :
+  requirements
+    <toolset>sun:<define>BOOST_TYPEOF_EMULATION
+    <toolset>gcc:<cxxflags>-Wno-unused-local-typedefs
+    <toolset>clang:<cxxflags>-Wno-unused-local-typedefs
+    ;
 
 run add_cxx11_lambda.cpp ;
 run add_global_functor.cpp ;
