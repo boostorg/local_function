@@ -5,7 +5,7 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 // Home at http://www.boost.org/libs/local_function
 
-#include <boost/spirit/include/phoenix.hpp>
+#include <boost/phoenix.hpp>
 #include <boost/detail/lightweight_test.hpp>
 #include <algorithm>
 #include <iostream>
