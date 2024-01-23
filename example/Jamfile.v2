@@ -29,7 +29,7 @@ run expensive_copy_cxx11_lambda.cpp ;
 run expensive_copy_local_function.cpp ;
 
 run gcc_access.cpp ;
-run gcc_lambda.cpp ;
+run gcc_lambda.cpp : : : <build>no <toolset>gcc:<build>yes ;
 run gcc_cxx11_lambda.cpp ;
 run gcc_square.cpp ;
 run gcc_store.cpp ;
