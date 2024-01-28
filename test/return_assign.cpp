@@ -35,7 +35,8 @@ boost::function<int (int, int)> linear(const int& slope) {
 }
 
 void call(void) {
-    boost::function<int (int, int)> f = linear(2);
+    int slope = 2;
+    boost::function<int (int, int)> f = linear(slope);
     BOOST_TEST(f(1, 2) == 5);
 }
 //]
