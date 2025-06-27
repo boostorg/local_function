@@ -10,5 +10,6 @@
     ],
     "maintainers": [
         "Lorenzo Caminiti <lorcaminiti -at- gmail.com>"
-    ]
+    ],
+    "cxxstd": "03"
 }
